@@ -1,6 +1,36 @@
 import { motion } from "motion/react"
 import { useState, useEffect } from "react"
 
+const teamMembers = [
+  {
+    id: 1,
+    name: "Wanda",
+    role: "Soporte administrativo colaborativo y digitalización de procesos",
+    image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1775650861/Todo_aporte_cuenta_1_hreceo.png",
+    description: "Hola, soy Wanda. Trabajo en soporte administrativo colaborativo y digitalización de procesos, ayudando a equipos a organizar su trabajo y dar seguimiento a iniciativas.\nMe gusta ordenar información, documentar procesos y apoyar para que el trabajo fluya mejor entre las personas.\nMe interesa seguir creciendo hacia la gestión de proyectos tecnológicos. Hace poco completé la certificación de Project Management de Google como parte de ese camino.",
+    services: [
+      "Consultoría de marketing",
+      "Desarrollo web",
+      "Asistencia de administración",
+      "Diseño de logotipos",
+      "Estrategia de contenidos",
+      "Recursos humanos (RR. HH.)",
+      "Diseño de experiencia de usuario (UX)",
+      "Marketing digital",
+      "Marketing de redes sociales",
+      "Optimización para motores de búsqueda (SEO)",
+    ],
+  },
+  {
+    id: 2,
+    name: "Próximamente",
+    role: "Perfil colaborador",
+    image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1775650892/Todo_aporte_cuenta_2_acsts9.png",
+    description: "Perfil en actualización.",
+    services: ["Información próximamente"],
+  },
+]
+
 const services = [
   {
     title: "Negocios listos para buscar",
@@ -60,7 +90,140 @@ function CountUp({ target, suffix, duration = 2000 }: { target: number; suffix: 
   return <span>{Math.round(count)}{suffix}</span>
 }
 
+interface TeamMember {
+  id: number
+  name: string
+  role: string
+  image: string
+  description: string
+  services: string[]
+}
+
+interface TeamModalProps {
+  member: TeamMember | null
+  isOpen: boolean
+  onClose: () => void
+}
+
+function TeamModal({ member, isOpen, onClose }: TeamModalProps) {
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose()
+    }
+    if (isOpen) {
+      window.addEventListener("keydown", handleEscape)
+      return () => window.removeEventListener("keydown", handleEscape)
+    }
+  }, [isOpen, onClose])
+
+  if (!isOpen || !member) return null
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+    >
+      <motion.div
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.95, opacity: 0 }}
+        onClick={(e) => e.stopPropagation()}
+        className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[40px] border border-white/10 bg-slate-950/95 p-8 shadow-2xl backdrop-blur-3xl sm:p-10"
+      >
+        <button
+          onClick={onClose}
+          className="absolute right-6 top-6 flex h-8 w-8 items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition"
+        >
+          <span className="text-xl leading-none">×</span>
+        </button>
+
+        <div className="grid gap-8 md:grid-cols-[300px_1fr]">
+          <div className="flex flex-col items-center gap-4">
+            <div className="overflow-hidden rounded-[24px] border border-white/10">
+              <img
+                src={member.image}
+                alt={member.name}
+                className="h-80 w-72 object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            <div>
+              <h2 className="text-3xl font-semibold text-white">{member.name}</h2>
+              <p className="mt-2 text-sm text-sky-300">{member.role}</p>
+            </div>
+
+            <div>
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-400">Sobre</h3>
+              <p className="whitespace-pre-line text-sm leading-7 text-slate-300">
+                {member.description}
+              </p>
+            </div>
+
+            <div>
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-400">Servicios</h3>
+              <div className="flex flex-wrap gap-2">
+                {member.services.map((service) => (
+                  <span
+                    key={service}
+                    className="inline-flex rounded-full border border-sky-300/30 bg-sky-300/5 px-3 py-1 text-xs text-sky-200"
+                  >
+                    {service}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  )
+}
+
+function TeamCard({
+  member,
+  onClick,
+}: {
+  member: TeamMember
+  onClick: () => void
+}) {
+  return (
+    <motion.button
+      onClick={onClick}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ y: -8 }}
+      className="group w-full overflow-hidden rounded-[32px] border border-white/10 bg-white/5 transition-all duration-300 hover:border-sky-300/30 hover:shadow-[0_0_40px_rgba(56,189,248,0.3)]"
+    >
+      <div className="relative overflow-hidden">
+        <img
+          src={member.image}
+          alt={member.name}
+          className="h-80 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+      </div>
+
+      <div className="p-6">
+        <h3 className="text-xl font-semibold text-white">{member.name}</h3>
+        <p className="mt-2 text-sm text-sky-300 line-clamp-2">{member.role}</p>
+        <div className="mt-4 inline-flex items-center gap-2 text-xs text-slate-400 group-hover:text-sky-300 transition">
+          Ver más
+          <span className="transition group-hover:translate-x-1">→</span>
+        </div>
+      </div>
+    </motion.button>
+  )
+}
+
 export default function App() {
+  const [selectedTeamMember, setSelectedTeamMember] = useState<TeamMember | null>(null)
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950 text-white">
       <div className="background-grid" />
@@ -227,6 +390,31 @@ export default function App() {
                 <p className="mt-1 text-xs text-slate-400">{stat.subtitle}</p>
               </motion.div>
             ))}
+          </section>
+
+          <section id="team" className="space-y-8">
+            <div className="text-center">
+              <p className="text-sm uppercase tracking-[0.35em] text-sky-300/80">Nuestro equipo</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                Colaboradores dedicados a tu éxito digital.
+              </h2>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2">
+              {teamMembers.map((member) => (
+                <TeamCard
+                  key={member.id}
+                  member={member}
+                  onClick={() => setSelectedTeamMember(member)}
+                />
+              ))}
+            </div>
+
+            <TeamModal
+              member={selectedTeamMember}
+              isOpen={selectedTeamMember !== null}
+              onClose={() => setSelectedTeamMember(null)}
+            />
           </section>
 
           <section id="contact" className="glass-card p-8 sm:p-10">

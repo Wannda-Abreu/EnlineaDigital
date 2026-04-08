@@ -110,15 +110,32 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
 
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <span className="text-sm tracking-widest text-gray-400">
-          ENLINEA DIGITAL
-        </span>
+      <header className="w-full border-b border-white/10 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-        <button className="border border-white/20 px-4 py-2 rounded-full text-sm hover:bg-white hover:text-black transition">
-          Hazte visible
-        </button>
-      </div>
+          <div className="flex items-center gap-3">
+            <img
+              src="https://res.cloudinary.com/dsyfal3wa/image/upload/v1775600013/3b9cd3bf-2bdc-42a1-88b7-0b350d92e2c2_si6nzj.png"
+              alt="logo"
+              className="w-8 h-8 object-contain drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]"
+            />
+            <span className="text-sm tracking-widest font-semibold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              ENLINEA DIGITAL
+            </span>
+          </div>
+
+          <nav className="hidden md:flex items-center gap-8 text-sm text-gray-300">
+            <a href="#" className="hover:text-white transition">Servicios</a>
+            <a href="#" className="hover:text-white transition">Proceso</a>
+            <a href="#" className="hover:text-white transition">Contacto</a>
+          </nav>
+
+          <button className="border border-white/20 px-5 py-2 rounded-full text-sm hover:bg-white hover:text-black transition">
+            Hazte visible
+          </button>
+
+        </div>
+      </header>
 
       <main className="flex flex-col gap-24">
 

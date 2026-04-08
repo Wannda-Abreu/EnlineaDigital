@@ -42,9 +42,9 @@ const services = [
 ]
 
 const stats = [
-  { value: 50, suffix: "+", label: "negocios digitalizados" },
-  { value: 300, suffix: "+", label: "clientes alcanzados" },
-  { value: 3, suffix: "x", label: "más visibilidad online" },
+  { value: 81, suffix: "%", label: "de clientes investigan online antes de decidir" },
+  { value: 2.5, suffix: "x", label: "más oportunidades con presencia digital" },
+  { value: 70, suffix: "%", label: "prefieren negocios visibles en internet" },
 ]
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
@@ -206,13 +206,16 @@ export default function App() {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="border border-white/10 p-6 rounded-xl"
+              className="border border-white/10 p-6 rounded-xl bg-white/5 hover:bg-white/10 transition"
             >
               <p className="text-3xl font-semibold">
                 <CountUp target={stat.value} suffix={stat.suffix} />
               </p>
-              <p className="text-xs mt-2 text-gray-400">
+              <p className="text-sm mt-2 text-gray-300">
                 {stat.label}
+              </p>
+              <p className="text-[11px] text-gray-500 mt-1">
+                Basado en tendencias digitales actuales
               </p>
             </div>
           ))}

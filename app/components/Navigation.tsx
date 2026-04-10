@@ -27,38 +27,43 @@ export function Navigation() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass border-b border-white/10' : 'bg-transparent'
+        isScrolled ? 'bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-sm' : 'bg-transparent'
       }`}
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-8">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center" aria-label="Enlinea Digital - Inicio">
             <img 
               src={logo} 
               alt="Enlinea Digital" 
-              className="h-10 w-auto"
+              className="h-8 w-auto"
             />
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-12">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-white/80 hover:text-white transition-colors duration-300 relative group focus:outline-none focus:text-white"
+                className={`text-sm font-medium transition-colors duration-200 ${
+                  isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white/80 hover:text-white'
+                }`}
                 aria-label={link.label}
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-violet-500 group-hover:w-full group-focus:w-full transition-all duration-300" />
               </a>
             ))}
             <a
               href="#contact"
-              className="px-6 py-2 rounded-full bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold hover:scale-105 focus:scale-105 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black"
+              className={`px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                isScrolled 
+                  ? 'bg-gray-900 text-white hover:bg-gray-800' 
+                  : 'bg-white text-gray-900 hover:bg-gray-50'
+              }`}
               aria-label="Empezar proyecto"
             >
               Empezar
@@ -68,7 +73,9 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden w-10 h-10 flex items-center justify-center text-white focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-lg"
+            className={`md:hidden w-10 h-10 flex items-center justify-center rounded-lg transition-colors ${
+              isScrolled ? 'text-gray-900' : 'text-white'
+            }`}
             aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -83,15 +90,19 @@ export function Navigation() {
         id="mobile-menu"
         initial={false}
         animate={{ height: isOpen ? 'auto' : 0 }}
-        className="md:hidden overflow-hidden glass border-t border-white/10"
+        className={`md:hidden overflow-hidden transition-colors ${
+          isScrolled ? 'bg-white/95 border-t border-gray-200/50' : 'bg-white/10 backdrop-blur-md border-t border-white/20'
+        }`}
       >
-        <div className="px-6 py-6 space-y-4">
+        <div className="px-8 py-6 space-y-4">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="block text-white/80 hover:text-white transition-colors duration-300 focus:outline-none focus:text-white focus:pl-2"
+              className={`block text-sm font-medium transition-colors ${
+                isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white/70 hover:text-white'
+              }`}
               aria-label={link.label}
             >
               {link.label}
@@ -100,7 +111,11 @@ export function Navigation() {
           <a
             href="#contact"
             onClick={() => setIsOpen(false)}
-            className="block w-full text-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className={`block w-full text-center px-6 py-3 rounded-lg text-sm font-semibold transition-all ${
+              isScrolled 
+                ? 'bg-gray-900 text-white hover:bg-gray-800' 
+                : 'bg-white text-gray-900 hover:bg-gray-50'
+            }`}
             aria-label="Empezar proyecto"
           >
             Empezar

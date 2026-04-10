@@ -40,11 +40,8 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="relative bg-black border-t border-white/10 overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 cyber-grid opacity-5" aria-hidden="true" />
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+    <footer className="relative bg-gray-900 text-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8">
         {/* Main Footer */}
         <div className="py-16 grid md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
@@ -59,47 +56,47 @@ export function Footer() {
                 <img 
                   src={logo} 
                   alt="Enlinea Digital" 
-                  className="h-10 w-auto"
+                  className="h-8 w-auto"
                 />
               </a>
-              <p className="text-white/70 mb-6 max-w-sm">
-                Transformando empresas dominicanas con soluciones digitales premium y tecnología de vanguardia.
+              <p className="text-gray-400 mb-6 max-w-sm">
+                Soluciones digitales que transforman empresas con diseño elegante y tecnología moderna.
               </p>
 
               {/* Contact Info */}
               <div className="space-y-3 mb-6">
                 <a 
                   href="mailto:info@enlineadigital.com" 
-                  className="flex items-center gap-3 text-white/70 hover:text-blue-400 transition-colors duration-300 focus:text-blue-400 focus:outline-none"
-                  aria-label="Enviar email a info@enlineadigital.com"
+                  className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-200"
+                  aria-label="Enviar email"
                 >
-                  <Mail className="w-5 h-5" aria-hidden="true" />
-                  <span>info@enlineadigital.com</span>
+                  <Mail className="w-5 h-5" />
+                  <span className="text-sm">info@enlineadigital.com</span>
                 </a>
                 <a 
                   href="tel:+18091234567" 
-                  className="flex items-center gap-3 text-white/70 hover:text-blue-400 transition-colors duration-300 focus:text-blue-400 focus:outline-none"
-                  aria-label="Llamar al +1 809 123 4567"
+                  className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-200"
+                  aria-label="Llamar"
                 >
-                  <Phone className="w-5 h-5" aria-hidden="true" />
-                  <span>+1 (809) 123-4567</span>
+                  <Phone className="w-5 h-5" />
+                  <span className="text-sm">+1 (809) 123-4567</span>
                 </a>
-                <div className="flex items-center gap-3 text-white/70">
-                  <MapPin className="w-5 h-5" aria-hidden="true" />
-                  <span>Santo Domingo, República Dominicana</span>
+                <div className="flex items-center gap-3 text-gray-400">
+                  <MapPin className="w-5 h-5" />
+                  <span className="text-sm">Santo Domingo, RD</span>
                 </div>
               </div>
 
               {/* Social Links */}
-              <div className="flex gap-4" role="list" aria-label="Redes sociales">
+              <div className="flex gap-3">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
-                    aria-label={`Visitar ${social.label}`}
-                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:border-blue-500 hover:bg-blue-500/10 focus:border-blue-500 focus:bg-blue-500/10 transition-all duration-300 group focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    aria-label={social.label}
+                    className="w-9 h-9 rounded-lg bg-gray-800 flex items-center justify-center hover:bg-white hover:text-gray-900 transition-colors duration-200"
                   >
-                    <social.icon className="w-5 h-5 text-white/70 group-hover:text-blue-400 group-focus:text-blue-400 transition-colors duration-300" aria-hidden="true" />
+                    <social.icon className="w-4 h-4" />
                   </a>
                 ))}
               </div>
@@ -115,13 +112,13 @@ export function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <h4 className="font-semibold text-white mb-4">{category}</h4>
-              <ul className="space-y-3" role="list">
+              <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wide">{category}</h4>
+              <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-white/60 hover:text-blue-400 focus:text-blue-400 transition-colors duration-300 text-sm focus:outline-none"
+                      className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                     >
                       {link}
                     </a>
@@ -133,13 +130,12 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-gray-800 py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-white/50 text-sm"
             >
               © 2026 Enlinea Digital. Todos los derechos reservados.
             </motion.p>
@@ -148,22 +144,12 @@ export function Footer() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="flex items-center gap-2 text-white/50 text-sm"
+              className="flex items-center gap-2"
             >
-              <span>Hecho con</span>
-              <motion.span
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                className="text-pink-500"
-                aria-label="amor"
-              >
-                ♥
-              </motion.span>
-              <span>en República Dominicana</span>
+              <span>Hecho en República Dominicana</span>
             </motion.div>
           </div>
         </div>
       </div>
     </footer>
   );
-}

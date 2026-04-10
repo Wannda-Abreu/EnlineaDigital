@@ -17,56 +17,47 @@ const services = [
   {
     icon: Layout,
     title: 'Diseño Web',
-    description: 'Sitios web modernos, responsivos y optimizados para conversión',
-    color: 'from-blue-500 to-cyan-500'
+    description: 'Sitios web modernos, responsivos y optimizados para conversión'
   },
   {
     icon: Palette,
     title: 'Branding Digital',
-    description: 'Identidad visual única que conecta con tu audiencia',
-    color: 'from-violet-500 to-purple-500'
+    description: 'Identidad visual única que conecta con tu audiencia'
   },
   {
     icon: Share2,
     title: 'Redes Sociales',
-    description: 'Gestión y estrategia para maximizar tu alcance social',
-    color: 'from-pink-500 to-rose-500'
+    description: 'Gestión y estrategia para maximizar tu alcance social'
   },
   {
     icon: Image,
     title: 'Diseño de Contenido',
-    description: 'Contenido visual que cuenta la historia de tu marca',
-    color: 'from-blue-500 to-violet-500'
+    description: 'Contenido visual que cuenta la historia de tu marca'
   },
   {
     icon: Zap,
     title: 'Automatización',
-    description: 'Procesos inteligentes que ahorran tiempo y recursos',
-    color: 'from-amber-500 to-orange-500'
+    description: 'Procesos inteligentes que ahorran tiempo y recursos'
   },
   {
     icon: FileText,
     title: 'Landing Pages',
-    description: 'Páginas de alta conversión para tus campañas',
-    color: 'from-emerald-500 to-teal-500'
+    description: 'Páginas de alta conversión para tus campañas'
   },
   {
     icon: ShoppingCart,
     title: 'E-commerce',
-    description: 'Tiendas online completas y seguras para vender más',
-    color: 'from-violet-500 to-pink-500'
+    description: 'Tiendas online completas y seguras para vender más'
   },
   {
     icon: Search,
     title: 'SEO Local',
-    description: 'Posicionamiento en Google para tu mercado objetivo',
-    color: 'from-blue-500 to-indigo-500'
+    description: 'Posicionamiento en Google para tu mercado objetivo'
   },
   {
     icon: Target,
     title: 'Estrategia Digital',
-    description: 'Plan integral para alcanzar tus objetivos de negocio',
-    color: 'from-pink-500 to-purple-500'
+    description: 'Plan integral para alcanzar tus objetivos de negocio'
   }
 ];
 
@@ -75,25 +66,19 @@ export function Services() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="services" ref={ref} className="relative py-32 bg-black overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 cyber-grid opacity-10" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+    <section id="services" ref={ref} className="relative py-32 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-            Nuestros <span className="gradient-text">Servicios</span>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+            Nuestros Servicios
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 via-violet-500 to-pink-500 mx-auto mb-8" />
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Soluciones completas para llevar tu negocio al mundo digital
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Soluciones integrales para potenciar tu presencia digital
           </p>
         </motion.div>
 
@@ -101,36 +86,23 @@ export function Services() {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative"
+              className="group"
             >
-              <div className="absolute -inset-0.5 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur"
-                style={{ 
-                  backgroundImage: `linear-gradient(135deg, var(--tw-gradient-stops))`,
-                }}
-              />
-              
-              <div className="relative card-glow-hover bg-slate-950/50 p-8 rounded-2xl h-full backdrop-blur-sm">
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="w-8 h-8 text-white" />
+              <div className="p-8 rounded-lg border border-gray-200 hover:border-gray-300 transition-all duration-300 h-full hover:shadow-lg">
+                <div className="w-14 h-14 rounded-lg bg-gray-100 flex items-center justify-center mb-6 group-hover:bg-gray-900 transition-colors duration-300">
+                  <service.icon className="w-7 h-7 text-gray-900 group-hover:text-white transition-colors duration-300" />
                 </div>
                 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-glow-blue transition-all duration-300">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {service.title}
                 </h3>
                 
-                <p className="text-white/70 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                   {service.description}
                 </p>
-
-                <div className="mt-6 flex items-center text-blue-400 group-hover:text-violet-400 transition-colors duration-300">
-                  <span className="text-sm font-semibold">Saber más</span>
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
               </div>
             </motion.div>
           ))}

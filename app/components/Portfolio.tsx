@@ -54,9 +54,7 @@ export function Portfolio() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section ref={ref} className="relative py-32 bg-gradient-to-b from-black via-slate-950 to-black overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 cyber-grid opacity-20" />
+    <section ref={ref} className="relative py-32 bg-white overflow-hidden">
       
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <motion.div
@@ -65,11 +63,11 @@ export function Portfolio() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-            Nuestro <span className="gradient-text">Portfolio</span>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+            Nuestro Portfolio
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 via-violet-500 to-pink-500 mx-auto mb-8" />
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-gray-300 mx-auto mb-8" />
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Proyectos que transformaron negocios y superaron expectativas
           </p>
         </motion.div>
@@ -92,8 +90,8 @@ export function Portfolio() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/30 to-transparent opacity-40 group-hover:opacity-60 transition-opacity duration-300" />
                 
                 {/* Content */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
@@ -107,7 +105,7 @@ export function Portfolio() {
                       {item.tags.map(tag => (
                         <span
                           key={tag}
-                          className="px-3 py-1 text-xs bg-white/10 backdrop-blur-sm rounded-full text-white/90 border border-white/20"
+                          className="px-3 py-1 text-xs bg-white/30 rounded-full text-white border border-white/50"
                         >
                           {tag}
                         </span>
@@ -115,15 +113,15 @@ export function Portfolio() {
                     </div>
                   </motion.div>
 
-                  <span className="text-blue-400 text-sm font-semibold mb-2">
+                  <span className="text-gray-300 text-sm font-semibold mb-2">
                     {item.category}
                   </span>
                   
-                  <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-glow-blue transition-all duration-300">
+                  <h3 className="text-2xl font-bold text-white mb-2 transition-all duration-300">
                     {item.title}
                   </h3>
                   
-                  <p className="text-white/80 mb-4">
+                  <p className="text-white/90 mb-4">
                     {item.description}
                   </p>
 
@@ -131,7 +129,7 @@ export function Portfolio() {
                     initial={false}
                     animate={{ x: hoveredIndex === index ? 0 : -20, opacity: hoveredIndex === index ? 1 : 0 }}
                     transition={{ duration: 0.3 }}
-                    className="flex items-center text-violet-400 font-semibold"
+                    className="flex items-center text-white font-semibold"
                   >
                     <span>Ver proyecto</span>
                     <ExternalLink className="w-4 h-4 ml-2" />

@@ -13,7 +13,7 @@ import { Footer } from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-white text-gray-900 overflow-x-hidden">
       <Navigation />
       <Hero />
       <About />

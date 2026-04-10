@@ -7,26 +7,22 @@ const stats = [
   {
     icon: TrendingUp,
     value: '+300%',
-    label: 'Incremento Promedio en Conversiones',
-    color: 'from-blue-500 to-cyan-500'
+    label: 'Incremento Promedio en Conversiones'
   },
   {
     icon: Users,
     value: '50K+',
-    label: 'Usuarios Impactados',
-    color: 'from-violet-500 to-purple-500'
+    label: 'Usuarios Impactados'
   },
   {
     icon: Award,
     value: '100+',
-    label: 'Proyectos Exitosos',
-    color: 'from-pink-500 to-rose-500'
+    label: 'Proyectos Exitosos'
   },
   {
     icon: Zap,
     value: '24/7',
-    label: 'Soporte y Monitoreo',
-    color: 'from-emerald-500 to-teal-500'
+    label: 'Soporte y Monitoreo'
   }
 ];
 
@@ -56,10 +52,7 @@ export function Results() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section ref={ref} className="relative py-32 bg-black overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 cyber-grid opacity-10" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-500/10 via-violet-500/10 to-pink-500/10 rounded-full blur-3xl" />
+    <section ref={ref} className="relative py-32 bg-white overflow-hidden">
       
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <motion.div
@@ -68,11 +61,11 @@ export function Results() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-            <span className="gradient-text">Resultados</span> Reales
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+            Resultados Reales
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 via-violet-500 to-pink-500 mx-auto mb-8" />
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-gray-300 mx-auto mb-8" />
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Números que hablan por sí solos
           </p>
         </motion.div>
@@ -88,17 +81,16 @@ export function Results() {
               className="text-center group"
             >
               <div className="relative inline-block mb-6">
-                <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-300`} />
-                <div className="relative w-20 h-20 bg-slate-950 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <stat.icon className="w-10 h-10 text-white" />
+                <div className="relative w-20 h-20 bg-gray-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <stat.icon className="w-10 h-10 text-gray-900" />
                 </div>
               </div>
 
-              <div className="text-5xl font-bold gradient-text mb-3">
+              <div className="text-5xl font-bold text-gray-900 mb-3">
                 {stat.value}
               </div>
 
-              <div className="text-white/70">
+              <div className="text-gray-600">
                 {stat.label}
               </div>
             </motion.div>
@@ -111,8 +103,8 @@ export function Results() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <h3 className="text-3xl font-bold text-center text-white mb-12">
-            Lo que dicen nuestros <span className="gradient-text">clientes</span>
+          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Lo que dicen nuestros clientes
           </h3>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -124,9 +116,7 @@ export function Results() {
                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                 className="relative group"
               >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-violet-500 to-pink-500 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="relative glass p-8 rounded-2xl border border-white/10 group-hover:border-white/30 transition-all duration-300">
+                  <div className="relative p-8 rounded-2xl border border-gray-200 bg-gray-50 transition-all duration-300">
                   {/* Stars */}
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -136,15 +126,15 @@ export function Results() {
                     ))}
                   </div>
 
-                  <p className="text-white/80 mb-6 italic leading-relaxed">
+                  <p className="text-gray-700 mb-6 italic leading-relaxed">
                     "{testimonial.text}"
                   </p>
 
                   <div>
-                    <div className="font-semibold text-white">
+                    <div className="font-semibold text-gray-900">
                       {testimonial.name}
                     </div>
-                    <div className="text-sm text-blue-400">
+                    <div className="text-sm text-gray-600">
                       {testimonial.position}
                     </div>
                   </div>

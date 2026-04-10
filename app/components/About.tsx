@@ -1,74 +1,88 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 export function About() {
   const ref = useRef(null);
+  const videoRef = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    if (videoRef.current && isInView && !isPlaying) {
+      videoRef.current.play().catch(() => {
+        // Si falla el autoplay, permitir que se reproduzca con click
+      });
+      setIsPlaying(true);
+    }
+  }, [isInView, isPlaying]);
 
   return (
-    <section ref={ref} className="relative py-32 bg-gradient-to-b from-black via-slate-950 to-black overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 cyber-grid opacity-20" />
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+    <section ref={ref} className="relative py-32 bg-gray-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-            Somos <span className="gradient-text">Innovación</span>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+            Sobre Enlinea Digital
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 via-violet-500 to-pink-500 mx-auto mb-8" />
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Transformamos ideas en realidades digitales
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="overflow-hidden rounded-lg"
           >
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-violet-500/20 to-pink-500/20 rounded-3xl blur-xl" />
-              <img
-                src="https://images.unsplash.com/photo-1758873268663-5a362616b5a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3b3Jrc3BhY2UlMjBjcmVhdGl2ZSUyMGFnZW5jeXxlbnwxfHx8fDE3NzUzMzU5MzN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Enlinea Digital Team"
-                className="relative rounded-3xl w-full h-[400px] object-cover"
-              />
-            </div>
+            <video
+              ref={videoRef}
+              muted
+              loop
+              playsInline
+              controls
+              crossOrigin="anonymous"
+              preload="metadata"
+              className="w-full h-[400px] object-cover bg-gray-900"
+            >
+              <source src="https://res.cloudinary.com/dsyfal3wa/video/upload/v1775770635/Abierto_bvgtgy.mp4" type="video/mp4" />
+              Tu navegador no soporta videos
+            </video>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-6"
           >
-            <p className="text-lg text-white/80 leading-relaxed">
-              En <span className="text-blue-400 font-semibold">Enlinea Digital</span>, no solo creamos sitios web. 
-              Construimos experiencias digitales que transforman negocios en la República Dominicana.
+            <p className="text-lg text-gray-700 leading-relaxed">
+              En <span className="font-semibold text-gray-900">Enlinea Digital</span>, transformamos 
+              visiones en experiencias digitales que impulsan el crecimiento de tu negocio.
             </p>
-            <p className="text-lg text-white/80 leading-relaxed">
-              Combinamos <span className="text-violet-400 font-semibold">diseño premium</span>, 
-              <span className="text-pink-400 font-semibold"> tecnología de punta</span> y 
-              <span className="text-blue-400 font-semibold"> estrategia digital</span> para 
-              llevar tu marca al siguiente nivel.
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Combinamos estrategia, diseño elegante y tecnología moderna para crear 
+              soluciones web que generan resultados reales.
             </p>
 
             <div className="grid grid-cols-3 gap-6 pt-8">
-              <div className="text-center">
-                <div className="text-4xl font-bold gradient-text mb-2">100+</div>
-                <div className="text-sm text-white/60">Proyectos</div>
+              <div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">100+</div>
+                <div className="text-sm text-gray-600">Proyectos</div>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold gradient-text mb-2">5+</div>
-                <div className="text-sm text-white/60">Años</div>
+              <div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">5+</div>
+                <div className="text-sm text-gray-600">Años</div>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold gradient-text mb-2">98%</div>
-                <div className="text-sm text-white/60">Satisfacción</div>
+              <div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">98%</div>
+                <div className="text-sm text-gray-600">Satisfacción</div>
               </div>
             </div>
           </motion.div>
@@ -76,4 +90,3 @@ export function About() {
       </div>
     </section>
   );
-}

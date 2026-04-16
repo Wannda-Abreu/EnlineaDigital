@@ -21,6 +21,10 @@ html {
   scroll-behavior: smooth;
 }
 
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -29,6 +33,14 @@ body {
     radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.12), transparent 20%),
     #020617;
   color: #ffffff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video {
+  display: block;
 }
 
 body::before {
@@ -104,4 +116,18 @@ body::before {
 
 .animate-pulse {
   animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -19,16 +19,7 @@ import"./src-Bn_bsBbM.js";import{a as e,c as t,d as n,f as r,n as i,o as a,p as 
       </header>
 
       <main class="blog-main">
-        <section class="blog-hero">
-          <div class="blog-hero-card">
-            <p class="blog-eyebrow">Blog editable</p>
-            <h1 class="blog-hero-title">Contenido para tu agencia, editable desde el front-end.</h1>
-            <p class="blog-hero-subtitle">
-              Gestiona articulos, imagenes, extractos y contenido con formato sin backend complejo.
-              Todo se guarda automaticamente en localStorage para que puedas integrarlo rapido en tu landing actual.
-            </p>
-          </div>
-        </section>
+        <section class="blog-hero"></section>
 
         <section class="blog-section-card">
           <div class="blog-toolbar">
@@ -36,7 +27,7 @@ import"./src-Bn_bsBbM.js";import{a as e,c as t,d as n,f as r,n as i,o as a,p as 
               <p class="blog-eyebrow">Articulos publicados</p>
               <h2 class="blog-section-title">Listado del blog</h2>
               <p class="blog-section-text">
-                Cada tarjeta muestra portada, titulo, extracto y acceso al articulo individual.
+                Temas en tendencias de marketing digital en RD.
               </p>
             </div>
           </div>

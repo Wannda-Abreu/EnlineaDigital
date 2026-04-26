@@ -2,6 +2,7 @@ const growthPlans = [
   {
     title: "Presencia Inicial",
     price: "Desde RD$35,000",
+    priceNote: "Pago inicial unico para lanzar tu presencia digital.",
     items: [
       "Landing page (1 seccion)",
       "Diseno responsive",
@@ -14,6 +15,7 @@ const growthPlans = [
   {
     title: "Presencia Digital",
     price: "Desde RD$55,000 + RD$8,000/mes",
+    priceNote: "Implementacion inicial mas acompanamiento mensual.",
     items: [
       "Pagina web (3 paginas)",
       "SEO basico",
@@ -25,6 +27,7 @@ const growthPlans = [
   {
     title: "Crecimiento Digital",
     price: "Desde RD$75,000 + RD$15,000/mes",
+    priceNote: "Base web mas gestion continua para crecer con consistencia.",
     items: [
       "Web mas completa",
       "Estrategia de contenido",
@@ -36,6 +39,7 @@ const growthPlans = [
   {
     title: "Escala Digital",
     price: "Desde RD$110,000 + RD$25,000/mes",
+    priceNote: "Proyecto avanzado con estrategia y ejecucion mensual.",
     items: [
       "Web avanzada o ecommerce",
       "Marketing + redes sociales",
@@ -83,6 +87,7 @@ export default function GrowthPlansSection({
               </p>
               <h3 className="mt-4 text-2xl font-semibold text-white">{plan.title}</h3>
               <p className="mt-4 text-lg font-semibold text-cyan-200">{plan.price}</p>
+              <p className="mt-2 text-sm leading-6 text-slate-400">{plan.priceNote}</p>
             </div>
 
             <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-300">

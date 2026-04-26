@@ -103,7 +103,7 @@ const DEFERRED_SECTION_CLASS = "[content-visibility:auto] [contain-intrinsic-siz
 const WEB_PORTFOLIO_HASH = "#/portfolio-web";
 const BLOG_URL = "./blog/";
 const LOGO_URL =
-  "https://res.cloudinary.com/dsyfal3wa/image/upload/f_auto,q_auto,w_96/v1777202577/Black_and_White_Chauffeur_Service_Logo_1_mcfqpt.png";
+  "https://res.cloudinary.com/dsyfal3wa/image/upload/f_auto,q_auto,w_96/v1777219173/Black_and_White_Chauffeur_Service_Logo_3_l1nr8n.png";
 
 type AppView = "home" | "portfolio";
 
@@ -732,14 +732,12 @@ export default function App() {
               <img
                 src={LOGO_URL}
                 alt="Logotipo de En Linea Digital"
-                width={96}
-                height={96}
-                className="h-8 w-8 object-contain"
+                className="h-16 w-auto"
                 decoding="async"
                 fetchPriority="high"
               />
-              <span className="text-sm font-semibold tracking-[0.28em] text-slate-100">
-                ENLINEA DIGITAL
+              <span className="text-sm font-semibold tracking-[0.16em] text-white">
+                Enlinea Digital
               </span>
             </a>
 

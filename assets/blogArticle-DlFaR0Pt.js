@@ -41,7 +41,7 @@ import"./src-w2TradVe.js";import{a as e,i as t,n,r,t as i}from"./utils-Crb2Zu-7.
         <section class="blog-hero">
           <div class="blog-article-layout">
             <article class="blog-article-card">
-              <img class="blog-article-cover" src="${e.coverImage}" alt="Portada de ${i(e.title)}" />
+              <img class="blog-article-cover" src="${e.coverImage}" alt="Portada de ${i(e.title)}" width="1600" height="900" loading="eager" decoding="async" />
               <div class="blog-article-content">
                 <p class="blog-eyebrow">Articulo del blog</p>
                 <h1 class="blog-article-title">${i(e.title)}</h1>

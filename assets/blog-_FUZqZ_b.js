@@ -30,7 +30,7 @@ import"./src-w2TradVe.js";import{i as e,n as t,o as n}from"./utils-Crb2Zu-7.js";
           ${s.length?`<div class="blog-grid">
                   ${s.map(n=>`
                         <article class="blog-card">
-                          <img class="blog-card-cover" src="${n.coverImage}" alt="Portada de ${n.title}" />
+                          <img class="blog-card-cover" src="${n.coverImage}" alt="Portada de ${n.title}" width="1600" height="900" loading="lazy" decoding="async" />
                           <div class="blog-card-body">
                             <p class="blog-card-meta">Actualizado ${t(n.updatedAt)}</p>
                             <h3 class="blog-card-title">${n.title}</h3>

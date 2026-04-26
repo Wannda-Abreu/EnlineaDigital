@@ -11,7 +11,7 @@ export function CTA() {
     <section id="contact" ref={ref} className="relative py-32 bg-white overflow-hidden">
       <div className="max-w-4xl mx-auto px-8">
         <motion.div
-          initial={{ opacity: 0, scale: 0.90}}
+          initial={{ opacity: 0, scale: 0.9}}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8 }}
           className="bg-gray-800 rounded-lg p-12 md:p-16 text-center text-white"

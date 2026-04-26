@@ -40,11 +40,11 @@ export function Difference() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-800">
             La Diferencia Enlinea
           </h2>
           <div className="w-24 h-1 bg-gray-300 mx-auto mb-8" />
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             Por qué las empresas líderes confían en nosotros
           </p>
         </motion.div>
@@ -60,15 +60,15 @@ export function Difference() {
             >
               <div className="relative inline-block mb-6">
                 <div className="relative w-20 h-20 bg-gray-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <diff.icon className="w-10 h-10 text-gray-900 group-hover:text-gray-700 transition-colors duration-300" />
+                  <diff.icon className="w-10 h-10 text-gray-800 group-hover:text-gray-600 transition-colors duration-300" />
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 transition-all duration-300">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 transition-all duration-300">
                 {diff.title}
               </h3>
 
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-500 leading-relaxed">
                 {diff.description}
               </p>
             </motion.div>
@@ -83,11 +83,11 @@ export function Difference() {
           className="mt-20 relative"
         >
           <div className="relative p-12 rounded-3xl text-center border border-gray-200 bg-gray-50">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">
               No vendemos sitios web. 
               <span> Creamos activos digitales que generan resultados.</span>
             </h3>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-500">
               Tu éxito es nuestra métrica de éxito
             </p>
           </div>

@@ -61,11 +61,11 @@ export function Results() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-800">
             Resultados Reales
           </h2>
           <div className="w-24 h-1 bg-gray-300 mx-auto mb-8" />
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             Números que hablan por sí solos
           </p>
         </motion.div>
@@ -82,15 +82,15 @@ export function Results() {
             >
               <div className="relative inline-block mb-6">
                 <div className="relative w-20 h-20 bg-gray-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <stat.icon className="w-10 h-10 text-gray-900" />
+                  <stat.icon className="w-10 h-10 text-gray-800" />
                 </div>
               </div>
 
-              <div className="text-5xl font-bold text-gray-900 mb-3">
+              <div className="text-5xl font-bold text-gray-800 mb-3">
                 {stat.value}
               </div>
 
-              <div className="text-gray-600">
+              <div className="text-gray-500">
                 {stat.label}
               </div>
             </motion.div>
@@ -103,7 +103,7 @@ export function Results() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <h3 className="text-3xl font-bold text-center text-gray-800 mb-12">
             Lo que dicen nuestros clientes
           </h3>
 
@@ -126,15 +126,15 @@ export function Results() {
                     ))}
                   </div>
 
-                  <p className="text-gray-700 mb-6 italic leading-relaxed">
+                  <p className="text-gray-600 mb-6 italic leading-relaxed">
                     "{testimonial.text}"
                   </p>
 
                   <div>
-                    <div className="font-semibold text-gray-900">
+                    <div className="font-semibold text-gray-800">
                       {testimonial.name}
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-500">
                       {testimonial.position}
                     </div>
                   </div>

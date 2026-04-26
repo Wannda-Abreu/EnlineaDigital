@@ -1,22 +1,53 @@
 import { motion } from 'motion/react';
+import styles from './Hero.module.css';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16">
-      {/* Subtle Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gray-100 rounded-full blur-[128px] opacity-50" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gray-100 rounded-full blur-[128px] opacity-50" />
+    <section className={styles.heroSection}>
+      {/* Background Video Container */}
+      <div className={styles.heroVideoContainer}>
+        {/* Desktop Video */}
+        <video
+          className={`${styles.heroVideo} ${styles.heroVideoDesktop}`}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        >
+          <source
+            src="https://res.cloudinary.com/dsyfal3wa/video/upload/v1776332123/desktop_at6vkg.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        {/* Mobile Video */}
+        <video
+          className={`${styles.heroVideo} ${styles.heroVideoMobile}`}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        >
+          <source
+            src="https://res.cloudinary.com/dsyfal3wa/video/upload/v1776332126/mobile_2_vsqib9.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        {/* Overlay */}
+        <div className={styles.heroOverlay} />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-8 text-center">
+      {/* Content Layer */}
+      <div className={styles.heroContent}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-7xl md:text-8xl font-bold mb-6 text-gray-900 leading-tight">
+          <h1 className={styles.heroTitle}>
             Enlinea Digital
           </h1>
         </motion.div>
@@ -26,38 +57,32 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className={styles.heroSubtitle}>
             Transformamos tu presencia digital con estrategias modernas, diseño elegante y tecnología robusta
           </p>
         </motion.div>
 
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className={styles.heroButtons}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <a
-            href="#contact"
-            className="px-8 py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors duration-200"
-          >
+          <a href="#contact" className={`${styles.heroBtn} ${styles.heroBtnPrimary}`}>
             Empezar Ahora
           </a>
-          <a
-            href="#services"
-            className="px-8 py-4 border-2 border-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-50 transition-colors duration-200"
-          >
+          <a href="#services" className={`${styles.heroBtn} ${styles.heroBtnSecondary}`}>
             Ver Servicios
           </a>
         </motion.div>
 
         {/* Scroll Indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className={styles.heroScrollIndicator}
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <svg className="w-6 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </motion.div>

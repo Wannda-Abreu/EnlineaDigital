@@ -26,10 +26,10 @@ export function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-800">
             Sobre Enlinea Digital
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
             Transformamos ideas en realidades digitales
           </p>
         </motion.div>
@@ -49,7 +49,7 @@ export function About() {
               controls
               crossOrigin="anonymous"
               preload="metadata"
-              className="w-full h-[400px] object-cover bg-gray-900"
+              className="w-full h-[400px] object-cover bg-gray-800"
             >
               <source src="https://res.cloudinary.com/dsyfal3wa/video/upload/v1775770635/Abierto_bvgtgy.mp4" type="video/mp4" />
               Tu navegador no soporta videos
@@ -62,27 +62,27 @@ export function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-6"
           >
-            <p className="text-lg text-gray-700 leading-relaxed">
-              En <span className="font-semibold text-gray-900">Enlinea Digital</span>, transformamos 
+            <p className="text-lg text-gray-600 leading-relaxed">
+              En <span className="font-semibold text-gray-800">Enlinea Digital</span>, transformamos 
               visiones en experiencias digitales que impulsan el crecimiento de tu negocio.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-600 leading-relaxed">
               Combinamos estrategia, diseño elegante y tecnología moderna para crear 
               soluciones web que generan resultados reales.
             </p>
 
             <div className="grid grid-cols-3 gap-6 pt-8">
               <div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">100+</div>
-                <div className="text-sm text-gray-600">Proyectos</div>
+                <div className="text-4xl font-bold text-gray-800 mb-2">100+</div>
+                <div className="text-sm text-gray-500">Proyectos</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">5+</div>
-                <div className="text-sm text-gray-600">Años</div>
+                <div className="text-4xl font-bold text-gray-800 mb-2">5+</div>
+                <div className="text-sm text-gray-500">Años</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">98%</div>
-                <div className="text-sm text-gray-600">Satisfacción</div>
+                <div className="text-4xl font-bold text-gray-800 mb-2">98%</div>
+                <div className="text-sm text-gray-500">Satisfacción</div>
               </div>
             </div>
           </motion.div>

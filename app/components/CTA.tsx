@@ -14,7 +14,7 @@ export function CTA() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className="bg-gray-900 rounded-lg p-12 md:p-16 text-center text-white"
+          className="bg-gray-800 rounded-lg p-12 md:p-16 text-center text-white"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -25,11 +25,11 @@ export function CTA() {
               ¿Listo para transformar tu negocio?
             </h2>
 
-            <p className="text-lg text-gray-300 mb-4 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-200 mb-4 max-w-2xl mx-auto">
               Agenda una consultoría gratuita con nuestro equipo y descubre cómo podemos impulsar tu presencia digital.
             </p>
 
-            <p className="text-gray-400 mb-12">
+            <p className="text-gray-300 mb-12">
               Respuesta garantizada en menos de 24 horas
             </p>
 

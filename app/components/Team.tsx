@@ -36,7 +36,7 @@ export function Team() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 id="team-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight">
+          <h2 id="team-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-800 leading-tight">
             Un equipo pequeño.
             <br />
             Una visión grande.
@@ -67,10 +67,10 @@ export function Team() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-center max-w-3xl mx-auto mb-16 space-y-6"
         >
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
             Enlinea Digital es una agencia boutique creada para elevar el estándar digital en República Dominicana.
           </p>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
             Detrás del estudio hay un equipo estratégico que combina diseño, visión de negocio y ejecución moderna.
           </p>
         </motion.div>
@@ -90,15 +90,15 @@ export function Team() {
                 {/* Accent Line */}
                 <div className="w-16 h-1 bg-gray-300 rounded-full mb-6" aria-hidden="true" />
                 
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 transition-all duration-300">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2 transition-all duration-300">
                   {member.name}
                 </h3>
                 
-                <p className="text-gray-600 font-semibold mb-4 text-lg">
+                <p className="text-gray-500 font-semibold mb-4 text-lg">
                   {member.role}
                 </p>
                 
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                   {member.description}
                 </p>
               </div>
@@ -114,7 +114,7 @@ export function Team() {
           className="mt-16 text-center"
         >
           <div className="relative inline-block">
-            <p className="relative text-xl md:text-2xl text-gray-900 max-w-4xl mx-auto px-8 py-6">
+            <p className="relative text-xl md:text-2xl text-gray-800 max-w-4xl mx-auto px-8 py-6">
               Juntos, construimos experiencias digitales que no solo se ven bien,
               <span className="font-semibold"> sino que funcionan.</span>
             </p>

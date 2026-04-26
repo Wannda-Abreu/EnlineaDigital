@@ -74,10 +74,10 @@ export function Services() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-800">
             Nuestros Servicios
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-500 max-w-3xl mx-auto">
             Soluciones integrales para potenciar tu presencia digital
           </p>
         </motion.div>
@@ -92,15 +92,15 @@ export function Services() {
               className="group"
             >
               <div className="p-8 rounded-lg border border-gray-200 hover:border-gray-300 transition-all duration-300 h-full hover:shadow-lg">
-                <div className="w-14 h-14 rounded-lg bg-gray-100 flex items-center justify-center mb-6 group-hover:bg-gray-900 transition-colors duration-300">
-                  <service.icon className="w-7 h-7 text-gray-900 group-hover:text-white transition-colors duration-300" />
+                <div className="w-14 h-14 rounded-lg bg-gray-100 flex items-center justify-center mb-6 group-hover:bg-gray-800 transition-colors duration-300">
+                  <service.icon className="w-7 h-7 text-gray-800 group-hover:text-white transition-colors duration-300" />
                 </div>
                 
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">
                   {service.title}
                 </h3>
                 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-500 leading-relaxed">
                   {service.description}
                 </p>
               </div>

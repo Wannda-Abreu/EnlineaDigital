@@ -50,7 +50,7 @@ export function Navigation() {
                 key={link.label}
                 href={link.href}
                 className={`text-sm font-medium transition-colors duration-200 ${
-                  isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white/80 hover:text-white'
+                  isScrolled ? 'text-gray-500 hover:text-gray-800' : 'text-white/80 hover:text-white'
                 }`}
                 aria-label={link.label}
               >
@@ -61,8 +61,8 @@ export function Navigation() {
               href="#contact"
               className={`px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                 isScrolled 
-                  ? 'bg-gray-900 text-white hover:bg-gray-800' 
-                  : 'bg-white text-gray-900 hover:bg-gray-50'
+                  ? 'bg-gray-800 text-white hover:bg-gray-700' 
+                  : 'bg-white text-gray-800 hover:bg-gray-50'
               }`}
               aria-label="Empezar proyecto"
             >
@@ -74,7 +74,7 @@ export function Navigation() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`md:hidden w-10 h-10 flex items-center justify-center rounded-lg transition-colors ${
-              isScrolled ? 'text-gray-900' : 'text-white'
+              isScrolled ? 'text-gray-800' : 'text-white'
             }`}
             aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={isOpen}
@@ -101,7 +101,7 @@ export function Navigation() {
               href={link.href}
               onClick={() => setIsOpen(false)}
               className={`block text-sm font-medium transition-colors ${
-                isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white/70 hover:text-white'
+                isScrolled ? 'text-gray-500 hover:text-gray-800' : 'text-white/70 hover:text-white'
               }`}
               aria-label={link.label}
             >
@@ -113,8 +113,8 @@ export function Navigation() {
             onClick={() => setIsOpen(false)}
             className={`block w-full text-center px-6 py-3 rounded-lg text-sm font-semibold transition-all ${
               isScrolled 
-                ? 'bg-gray-900 text-white hover:bg-gray-800' 
-                : 'bg-white text-gray-900 hover:bg-gray-50'
+                ? 'bg-gray-800 text-white hover:bg-gray-700' 
+                : 'bg-white text-gray-800 hover:bg-gray-50'
             }`}
             aria-label="Empezar proyecto"
           >

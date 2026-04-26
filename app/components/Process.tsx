@@ -48,10 +48,10 @@ export function Process() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-800">
             Nuestro Proceso
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-500 max-w-3xl mx-auto">
             Un enfoque sistemático para transformar tu visión en soluciones digitales de calidad
           </p>
         </motion.div>
@@ -66,15 +66,15 @@ export function Process() {
               className="relative"
             >
               <div className="bg-white border border-gray-200 p-8 rounded-lg hover:shadow-lg transition-shadow duration-300 h-full">
-                <div className="inline-block px-3 py-1 rounded-full bg-gray-900 text-white font-semibold mb-6 text-sm">
+                <div className="inline-block px-3 py-1 rounded-full bg-gray-800 text-white font-semibold mb-6 text-sm">
                   {step.number}
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl font-bold text-gray-800 mb-3">
                   {step.title}
                 </h3>
 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-500 leading-relaxed">
                   {step.description}
                 </p>
               </div>

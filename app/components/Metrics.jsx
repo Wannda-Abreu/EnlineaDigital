@@ -37,7 +37,7 @@ export function Metrics() {
                 <div className="text-4xl md:text-5xl font-bold text-white mb-3">
                   {metric.value}
                 </div>
-                <div className="text-gray-400 text-sm leading-relaxed">
+                <div className="text-gray-300 text-sm leading-relaxed">
                   {metric.label}
                 </div>
               </div>

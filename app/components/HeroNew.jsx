@@ -33,7 +33,7 @@ export function Hero() {
               </h1>
 
               {/* Paragraph */}
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl">
+              <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-xl">
                 Ayudamos a emprendedores y comercios locales a digitalizar su servicio para que los clientes te encuentren rápido.
               </p>
 
@@ -42,7 +42,7 @@ export function Hero() {
                 <button className="px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 text-base md:text-lg">
                   Empezar ahora
                 </button>
-                <button className="px-6 md:px-8 py-3 md:py-4 border border-gray-600 text-gray-300 font-semibold rounded-full hover:border-gray-400 hover:text-white transition-all duration-300 text-base md:text-lg">
+                <button className="px-6 md:px-8 py-3 md:py-4 border border-gray-500 text-gray-200 font-semibold rounded-full hover:border-gray-300 hover:text-white transition-all duration-300 text-base md:text-lg">
                   Ver servicios
                 </button>
               </div>
@@ -117,7 +117,7 @@ export function Hero() {
               </h1>
 
               {/* Paragraph */}
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl">
+              <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-xl">
                 Ayudamos a emprendedores y comercios locales a digitalizar su servicio para que los clientes te encuentren rápido.
               </p>
 
@@ -126,7 +126,7 @@ export function Hero() {
                 <button className="px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 text-base md:text-lg">
                   Empezar ahora
                 </button>
-                <button className="px-6 md:px-8 py-3 md:py-4 border border-gray-600 text-gray-300 font-semibold rounded-full hover:border-gray-400 hover:text-white transition-all duration-300 text-base md:text-lg">
+                <button className="px-6 md:px-8 py-3 md:py-4 border border-gray-500 text-gray-200 font-semibold rounded-full hover:border-gray-300 hover:text-white transition-all duration-300 text-base md:text-lg">
                   Ver servicios
                 </button>
               </div>
